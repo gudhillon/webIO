@@ -1,0 +1,29 @@
+{
+  "name": "webIO",
+  "version": "1.0.0",
+  "description": "1. get basic http server setup to server simple html page 2. add sockets and check that broadcast/emitting works 3. start with client entrypoints",
+  "main": "src/server/server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fullStackedPancakes/webIO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fullStackedPancakes/webIO/issues"
+  },
+  "homepage": "https://github.com/fullStackedPancakes/webIO#readme"
+}
