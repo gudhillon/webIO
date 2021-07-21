@@ -2,13 +2,16 @@
 <html>
   <head>
     <title>IO test</title>
-    <link type="text/css" rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
     <canvas id="game-canvas"></canvas>
-    <script async src="../index.js"></script>
-    <div id="play-menu" class="menu">
-      <input type="text" id="username-input" placeholder="Username" />
+    <div id="play-menu" class="hidden">
+      <input
+        type="text"
+        id="username-input"
+        placeholder="Username"
+        maxlength="10"
+      />
       <button id="play-button">PLAY</button>
     </div>
   </body>

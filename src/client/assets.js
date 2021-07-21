@@ -1,9 +1,10 @@
-const ASSET_SET = ['player.jpg'];
+// Asset Manager 
+const ASSET_SET = ['player.png',];
 const assets = {};
-const downloadPromises = Promise.all(ASSET_SET.map(downloadAssets));
+const downloadPromises = Promise.all(ASSET_SET.map(downloadAsset));
 
 // map file name to its image object value
-function downloadAssets(assetName) {
+function downloadAsset(assetName) {
     return new Promise(resolve => {
       const asset = new Image();
       asset.onload = () => {
@@ -12,6 +13,6 @@ function downloadAssets(assetName) {
       };
       asset.src = `/assets/${assetName}`;
     });
-  }
-export const downloadAssets = () => downloadPromise;
+}
+export const downloadAssets = () => downloadPromises;
 export const getAsset = assetName => assets[assetName];

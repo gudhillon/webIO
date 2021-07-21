@@ -2,11 +2,13 @@ import io from 'socket.io-client';
 import { processGameUpdate } from './state';
 const Constants = require('../shared/shared');
 
-const socket = io(`ws://${window.location.host}`);
+const socketProtocol = (window.location.protocol.includes('https')) ? 'wss' : 'ws';
+const socket = io(`${socketProtocol}://${window.location.host}`);
 
 // resolve when connection is made to server
 const connection = new Promise(resolve => {
     socket.on('connect', () => {
+        console.log('Connected to server!');
         resolve();
     });
 });
@@ -14,13 +16,13 @@ const connection = new Promise(resolve => {
 //callbacks for messages from server
 export const connect = gameOver => (
     connection.then(() => {
-        socket.on('update', processGameUpdate);
-        socket.on('player_dead', gameOver);
+        socket.on(Constants.MSG_TYPES.GAME_UPDATE, processGameUpdate);
+        socket.on(Constants.MSG_TYPES.GAME_OVER, gameOver);
     })
 );
 export const play = username => {
-    socket.emit('join_game', username);
+    socket.emit(Constants.MSG_TYPES.JOIN_GAME, username);
 };
 export const changeDirection = direction => {
-    socket.emit('input', direction);
+    socket.emit(Constants.MSG_TYPES.INPUT, direction);
 };

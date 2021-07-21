@@ -1,9 +1,8 @@
-// Direction and movement events from user
-// Current code for movement, can add touch later
-import { updateDirection } from './networking';
+// Capture and document direction and movement events from user
+import { changeDirection } from './networking';
 function handleInput(x, y) {
     const curr = Math.atan2(x - window.innerWidth / 2, window.innerHeight / 2 - y);
-    updateDirection(curr);
+    changeDirection(curr);
   }
 function onMouseInput(event) {
     handleInput(event.clientX, event.clientY);
