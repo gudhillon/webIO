@@ -17,26 +17,69 @@ function setCanvasDimensions() {
 
 window.addEventListener('resize', debounce(40, setCanvasDimensions));
 
+function drawCircle(xPos, yPos, radius, color) {
+  var startAngle        = (Math.PI/180)*0;
+  var endAngle          = (Math.PI/180)*360;
+  context.beginPath();
+   context.arc(xPos, yPos, radius, 
+               startAngle, endAngle, false);
+   context.fillStyle = color;
+   context.fill(); 
+}
+//const randNum = [];
+//for (var a = 0; a < numCircles; a++) randNum[a] = Math.random();
+function renderRandomCircles() {
+  var colors     = ["aqua",  "black", "blue",  "fuchsia",
+                    "green", "cyan",  "lime",  "maroon",
+                    "navy",  "olive", "purple","red",
+                    "silver","teal",  "yellow","azure",
+                    "gold",  "bisque","pink",  "orange"];
+  var circleRadius = 10;
+  var numColors  =  colors.length;
+  var numCircles = 20;
+  for(var n=0; n<numCircles; n++) {
+      var xPos       =  randNum[n]*(MAP_SIZE);
+      var yPos       =  randNum[n]*(MAP_SIZE);
+      var radius     =  circleRadius;
+      var colorIndex =  randNum[n]*(numColors-1);
+      colorIndex     =  Math.round(colorIndex);
+      var color      =  colors[colorIndex];
+      drawCircle(xPos, yPos, radius, color);
+   }
+
+}
+
 function render() {
     const { me, others } = getCurrentState();
     if (!me) return;
+    // Draw Borders
+    renderBorders(me.x, me.y);
     // Draw background
     renderBackground(me.x, me.y);
-
-    // Draw bounds that players cannot pass
-    context.strokeStyle = 'darkgreen';
-    context.lineWidth = 1;
-    context.strokeRect(canvas.width / 2 - me.x, canvas.height / 2 - me.y, MAP_SIZE, MAP_SIZE);
-
+    // circle
+    //renderRandomCircles();
+ 
     //Draw Players
     renderPlayer(me, me);
     others.forEach(renderPlayer.bind(null, me));
 }
 
+function renderBorders(x, y) {
+  context.fillStyle = "#AB274F";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  // Draw bounds that players cannot pass
+  context.strokeStyle = '#E52B50';
+  context.lineWidth = 10;
+  context.strokeRect(canvas.width / 2 - x, canvas.height / 2 - y, MAP_SIZE, MAP_SIZE);
+
+}
+
 // render background relative to player
+// background pattern
 function renderBackground(x, y) {
-  const backgroundX = MAP_SIZE / 2 - x + canvas.width / 2;
-  const backgroundY = MAP_SIZE / 2 - y + canvas.height / 2;
+   const backgroundX = MAP_SIZE / 2 - x + canvas.width / 2;
+   const backgroundY = MAP_SIZE / 2 - y + canvas.height / 2;
+  
   const backgroundGradient = context.createRadialGradient(
     backgroundX,
     backgroundY,
@@ -45,14 +88,10 @@ function renderBackground(x, y) {
     backgroundY,
     MAP_SIZE / 2,
   );
-  backgroundGradient.addColorStop(0, 'lightgray');
-  backgroundGradient.addColorStop(0.2, 'green');
-  backgroundGradient.addColorStop(0.4, 'lightgray');
-  backgroundGradient.addColorStop(0.6, 'green');
-  backgroundGradient.addColorStop(0.8, 'lightgray');
-  backgroundGradient.addColorStop(1, 'green');
+  backgroundGradient.addColorStop(0, '#C9FFE5');
+  backgroundGradient.addColorStop(1, '#7CB9E8');
   context.fillStyle = backgroundGradient;
-  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.fillRect(canvas.width / 2 - x, canvas.height / 2 - y, MAP_SIZE, MAP_SIZE);  
 }
 
 // Render Player
