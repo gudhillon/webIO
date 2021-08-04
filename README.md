@@ -9,7 +9,7 @@ To do list:
 
 1. change background to a grid ✓
 2. Add randomized food (collectible points) throughout map ✓
-3. Increase size of player and decrease speed as they consume food
+3. Increase size of player and decrease speed as they consume food ✓
 4. Add score attribute to player
 5. Scale screen as player gets bigger
 6. Collision detection:
