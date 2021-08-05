@@ -25,5 +25,5 @@ To do list:
     - Authentication (account register -> select pre-custom skins)
 13. Adjust HTML/CSS of main page
 14. Add different loading screens for initial render and stop render (when reconnect or death)
-15. Add spherical map and boundaries
+15. Add potentially spherical grid map
 16. Add Documentation/Sources
