@@ -5,6 +5,7 @@ class Player extends ObjectClass {
     constructor(id, username, x, y) {
       super(id, x, y, Math.random() * 2 * Math.PI, Constants.PLAYER_SPEED);
       this.username = username;
+      this.radius = Constants.PLAYER_RADIUS;
     }
     update(dt) {
       super.update(dt);
@@ -19,6 +20,8 @@ class Player extends ObjectClass {
         ...(super.serializeForUpdate()),
         direction: this.direction,
         username: this.username,
+        speed: this.speed,
+        radius: this.radius,
       };
     }
 }

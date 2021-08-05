@@ -1,5 +1,6 @@
 module.exports = Object.freeze({
-    PLAYER_RADIUS: 60,
+    PLAYER_RADIUS: 30,
+    BLOB_RADIUS: 10,
     PLAYER_SPEED: 400,
     MAP_SIZE: 3000,
     MSG_TYPES: {

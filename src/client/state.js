@@ -75,6 +75,7 @@ export function getCurrentState() {
     return {
       me: interpolateObject(baseUpdate.me, next.me, r),
       others: interpolateObjectArray(baseUpdate.others, next.others, r),
+      blobs: next.blobs, 
     };
   }
 }

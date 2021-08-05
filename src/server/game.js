@@ -1,10 +1,12 @@
 const Constants = require('../shared/shared');
 const Player = require('./player');
+const blobCollisions = require('./blobCollisions');
 
 class Game {
-    constructor() {
+    constructor(blobs) {
         this.sockets = {};
         this.players = {};
+        this.blobs = blobs;
         this.lastUpdateTime = Date.now();
         this.shouldSendUpdate = false;
         // 60 updates a second
@@ -38,7 +40,10 @@ class Game {
           const player = this.players[playerID];
           player.update(dt);
         });
-    
+        
+        this.blobs = blobCollisions(Object.values(this.players), this.blobs);
+        // After this, check same method against each player
+
         // Send a game update to each player every other time
         if (this.shouldSendUpdate) {
           Object.keys(this.sockets).forEach(playerID => {
@@ -56,10 +61,18 @@ class Game {
         const nearbyPlayers = Object.values(this.players).filter(
           p => p !== player && p.distanceTo(player) <= Constants.MAP_SIZE / 2,
         );
+        const nearbyBlobs = Object.values(this.blobs).filter(
+          b => b.distanceTo(player) <= Constants.MAP_SIZE / 2,
+        );
+        // if []
+        // const nearbyBlobs = this.blobs.filter(
+        //   b => b.distanceTo(player) <= Constants.MAP_SIZE / 2,
+        // );
         return {
           t: Date.now(),
           me: player.serializeForUpdate(),
           others: nearbyPlayers.map(p => p.serializeForUpdate()),
+          blobs: nearbyBlobs.map(b => b.serializeForUpdate()),
         };
       }
     }

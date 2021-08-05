@@ -3,7 +3,7 @@ import { getCurrentState } from './state';
 import { debounce } from 'throttle-debounce';
 
 const Shared = require('../shared/shared');
-const { PLAYER_RADIUS, MAP_SIZE } = Shared;
+const { MAP_SIZE, BLOB_RADIUS } = Shared;
 
 const canvas = document.getElementById('game-canvas');
 const context = canvas.getContext('2d');
@@ -17,48 +17,17 @@ function setCanvasDimensions() {
 
 window.addEventListener('resize', debounce(40, setCanvasDimensions));
 
-function drawCircle(xPos, yPos, radius, color) {
-  var startAngle        = (Math.PI/180)*0;
-  var endAngle          = (Math.PI/180)*360;
-  context.beginPath();
-   context.arc(xPos, yPos, radius, 
-               startAngle, endAngle, false);
-   context.fillStyle = color;
-   context.fill(); 
-}
-//const randNum = [];
-//for (var a = 0; a < numCircles; a++) randNum[a] = Math.random();
-function renderRandomCircles() {
-  var colors     = ["aqua",  "black", "blue",  "fuchsia",
-                    "green", "cyan",  "lime",  "maroon",
-                    "navy",  "olive", "purple","red",
-                    "silver","teal",  "yellow","azure",
-                    "gold",  "bisque","pink",  "orange"];
-  var circleRadius = 10;
-  var numColors  =  colors.length;
-  var numCircles = 20;
-  for(var n=0; n<numCircles; n++) {
-      var xPos       =  randNum[n]*(MAP_SIZE);
-      var yPos       =  randNum[n]*(MAP_SIZE);
-      var radius     =  circleRadius;
-      var colorIndex =  randNum[n]*(numColors-1);
-      colorIndex     =  Math.round(colorIndex);
-      var color      =  colors[colorIndex];
-      drawCircle(xPos, yPos, radius, color);
-   }
-
-}
-
 function render() {
-    const { me, others } = getCurrentState();
+    const { me, others, blobs } = getCurrentState();
     if (!me) return;
     // Draw Borders
     renderBorders(me.x, me.y);
     // Draw background
     renderBackground(me.x, me.y);
-    // circle
-    //renderRandomCircles();
- 
+    // Draw blobs
+    for (var blob = 0; blob < blobs.length; blob++) {
+      renderBlob(me, blobs[blob].x, blobs[blob].y, BLOB_RADIUS, blobs[blob].color);
+    }
     //Draw Players
     renderPlayer(me, me);
     others.forEach(renderPlayer.bind(null, me));
@@ -79,7 +48,6 @@ function renderBorders(x, y) {
 function renderBackground(x, y) {
    const backgroundX = MAP_SIZE / 2 - x + canvas.width / 2;
    const backgroundY = MAP_SIZE / 2 - y + canvas.height / 2;
-  
   const backgroundGradient = context.createRadialGradient(
     backgroundX,
     backgroundY,
@@ -94,9 +62,24 @@ function renderBackground(x, y) {
   context.fillRect(canvas.width / 2 - x, canvas.height / 2 - y, MAP_SIZE, MAP_SIZE);  
 }
 
+function renderBlob(me, xPos, yPos, radius, color) {
+  const canvasX = canvas.width / 2 + xPos - me.x;
+  const canvasY = canvas.height / 2 + yPos - me.y;
+  var startAngle        = (Math.PI/180)*0;
+  var endAngle          = (Math.PI/180)*360;
+  // Save/Restore?
+  context.save();
+  context.beginPath();
+  context.arc(canvasX, canvasY, radius, 
+               startAngle, endAngle, false);
+  context.fillStyle = color;
+  context.fill(); 
+  context.restore();
+}
+
 // Render Player
 function renderPlayer(me, player) {
-    const { x, y, direction, username } = player;
+    const { x, y, direction, username, radius } = player;
     const canvasX = canvas.width / 2 + x - me.x;
     const canvasY = canvas.height / 2 + y - me.y;
     context.save();
@@ -104,10 +87,10 @@ function renderPlayer(me, player) {
     context.rotate(direction);
     context.drawImage(
       getAsset('player.png'),
-      -PLAYER_RADIUS,
-      -PLAYER_RADIUS,
-      PLAYER_RADIUS * 2,
-      PLAYER_RADIUS * 2,
+      -radius,
+      -radius,
+      radius * 2,
+      radius * 2,
     );
     context.restore();
 
@@ -117,7 +100,7 @@ function renderPlayer(me, player) {
       username.substring(0, username.indexOf("NaN")),
       canvasX,
       canvasY,
-      PLAYER_RADIUS * 2,
+      radius * 2,
       2,
     );
     context.textBaseline = 'middle';
