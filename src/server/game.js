@@ -45,6 +45,7 @@ class Game {
         // After this, check same method against each player
 
         // Send a game update to each player every other time
+        // This is to save bandwidth, 30 updates a second to game is good enough
         if (this.shouldSendUpdate) {
           Object.keys(this.sockets).forEach(playerID => {
             const socket = this.sockets[playerID];

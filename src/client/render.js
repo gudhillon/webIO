@@ -96,13 +96,12 @@ function renderPlayer(me, player) {
     context.restore();
 
     context.fillStyle = 'blue';
-    context.font = "13.5px Verdana";
+    context.font =  radius/(20/9) +"px Verdana";
     context.fillText(
       username.substring(0, username.indexOf("NaN")),
       canvasX,
       canvasY,
       radius * 2,
-      2,
     );
     context.textBaseline = 'middle';
     context.textAlign = 'center';
