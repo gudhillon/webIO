@@ -12,7 +12,7 @@ function blobCollisions(players, blobs) {
                 var sum = Math.PI * player.radius * player.radius + Math.PI * Constants.BLOB_RADIUS * Constants.BLOB_RADIUS;
                 player.radius = Math.sqrt(sum / Math.PI);
                 // Figure out speed formula relative to radius
-                player.speed -= Constants.PLAYER_RADIUS / (player.radius ** 2);
+                player.speed -= Constants.PLAYER_RADIUS / player.radius;
                 blob.x = Math.random() * (Constants.MAP_SIZE-30);
                 blob.y = Math.random() * (Constants.MAP_SIZE-30);
                 break;
