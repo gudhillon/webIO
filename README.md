@@ -10,13 +10,13 @@ To do list:
 1. change background to a grid ✓
 2. Add randomized food (collectible points) throughout map ✓
 3. Increase size of player and decrease speed as they consume food ✓
-4. Add score attribute to player
+4. Bigger the player's size, the slower they will go ✓
 5. Scale screen as player gets bigger
 6. Collision detection:
    - if player bigger than other player and they overlap (> 50% overlap),
      smaller player dies
 7. Send dead players to game over screen -> reconnect screen
-8. Bigger the player's size, the slower they will go
+8. Add score attribute to player
 9. Add a leaderboard of top 10 players, and position of current player as 11th
 10. Create basic skins, allow user to choose (and create default)
 11. Use Databases
