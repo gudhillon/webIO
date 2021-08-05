@@ -8,12 +8,11 @@ function blobCollisions(players, blobs) {
           const player = players[i];
           //if (!blob) continue;
           // Currently > 50% overlap, + blob_radius for any overlap
-          if (player.distanceTo(blob) < player.radius) { 
+          if (player.distanceTo(blob) < player.radius) {
                 var sum = Math.PI * player.radius * player.radius + Math.PI * Constants.BLOB_RADIUS * Constants.BLOB_RADIUS;
                 player.radius = Math.sqrt(sum / Math.PI);
                 // Figure out speed formula relative to radius
                 player.speed -= Constants.PLAYER_RADIUS / (player.radius ** 2);
-                console.log(player.speed);
                 blob.x = Math.random() * (Constants.MAP_SIZE-30);
                 blob.y = Math.random() * (Constants.MAP_SIZE-30);
                 break;
@@ -22,5 +21,5 @@ function blobCollisions(players, blobs) {
   }
   return blobs;
 }
-  
+
 module.exports = blobCollisions;
