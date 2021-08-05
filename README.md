@@ -7,7 +7,7 @@ Basic:
 
 To do list:
 
-1. change background to a grid ✓
+1. change design of background ✓
 2. Add randomized food (collectible points) throughout map ✓
 3. Increase size of player and decrease speed as they consume food ✓
 4. Bigger the player's size, the slower they will go ✓
