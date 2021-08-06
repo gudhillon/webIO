@@ -17,7 +17,7 @@ To do list:
      smaller player dies
 7. Send dead players to game over screen -> reconnect screen
 8. Add score attribute to player
-9. Add a leaderboard of top 10 players, and position of current player as 11th
+9. Add a leaderboard of top 10 players, and current position of player
 10. Create basic skins, allow user to choose (and create default)
 11. Use Databases
     - Store leaderboard records
