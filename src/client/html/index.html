@@ -6,13 +6,29 @@
   <body>
     <canvas id="game-canvas"></canvas>
     <div id="play-menu" class="hidden">
+      <h1>Simple Agar.io Replica</h1>
+      <p>
+        Collect blobs and overcome other players
+        <br />
+        Use your mouse to move.
+      </p>
       <input
         type="text"
         id="username-input"
         placeholder="Username"
-        maxlength="10"
+        maxlength="8"
       />
       <button id="play-button">PLAY</button>
+    </div>
+    <div id="container-popup" class="hidden">
+      <div id="popup">
+        <h1>YOU DIED!</h1>
+        <p>
+          Would you like to try again
+          <a id="username-value"></a>
+        </p>
+        <button id="restart-button">Restart</button>
+      </div>
     </div>
   </body>
 </html>

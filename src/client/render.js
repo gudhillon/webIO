@@ -3,7 +3,7 @@ import { getCurrentState } from './state';
 import { debounce } from 'throttle-debounce';
 
 const Shared = require('../shared/shared');
-const { MAP_SIZE, BLOB_RADIUS } = Shared;
+const { MAP_SIZE, BLOB_RADIUS, PLAYER_RADIUS } = Shared;
 
 const canvas = document.getElementById('game-canvas');
 const context = canvas.getContext('2d');
@@ -105,8 +105,8 @@ function renderPlayer(me, player) {
     );
     context.restore();
 
-    context.fillStyle = 'blue';
-    context.font =  radius/(20/9) +"px Verdana";
+    context.fillStyle = 'red';
+    context.font =  radius/(PLAYER_RADIUS/13) +"px Verdana";
     context.fillText(
       username.substring(0, username.indexOf("NaN")),
       canvasX,
@@ -119,10 +119,7 @@ function renderPlayer(me, player) {
 
 // Setup up menu screen
 function renderMainMenu() {
-  const t = Date.now() / 7500;
-  const x = MAP_SIZE / 2 + 800 * Math.cos(t);
-  const y = MAP_SIZE / 2 + 800 * Math.sin(t);
-  renderBackground(x, y);
+  context.drawImage(getAsset("agarBackground.png"),0,0,canvas.width,canvas.height);
 }
 
 // Toggle between main menu and game rendering

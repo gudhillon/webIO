@@ -1,5 +1,5 @@
 // Asset Manager 
-const ASSET_SET = ['player.png',];
+const ASSET_SET = ['player.png', 'agarBackground.png'];
 const assets = {};
 const downloadPromises = Promise.all(ASSET_SET.map(downloadAsset));
 

@@ -17,10 +17,10 @@ To do list:
    - if player bigger than other player and they overlap (> 50% overlap),
      smaller player dies ✓
 8. Send dead players to game over screen -> reconnect screen ✓
-9. Add a leaderboard of top 10 players, and current position of player
+9. Add a leaderboard of top 10 players, current position of player, score display
 10. Create basic skins, allow user to choose (and create default)
-11. Adjust HTML/CSS of main page
-12. Add different loading screens for initial render and stop render (when reconnect or death)
+11. Adjust HTML/CSS of main page ✓
+12. Add different loading screens for initial render and stop render (when reconnect or death) ✓
 13. Add Documentation/Sources
 14. Use Databases
     - Store leaderboard records

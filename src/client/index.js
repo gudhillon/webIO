@@ -12,11 +12,20 @@ import './css/main.css'
 const playMenu = document.getElementById("play-menu");
 const playButton = document.getElementById("play-button");
 const usernameInput = document.getElementById("username-input");
+const deathScreen = document.getElementById("container-popup");
+const restartButton = document.getElementById("restart-button");
+const userValue = document.getElementById("username-value");
 
 function gameOver() {
-stopCapturingInput();
-stopRendering()
-playMenu.classList.remove('hidden');
+    console.log("Player dead");
+    stopCapturingInput();
+    userValue.innerHTML = usernameInput.value + "?";
+    deathScreen.classList.remove("hidden");
+    restartButton.onclick = () => {
+        stopRendering();
+        deathScreen.classList.add("hidden");
+        playMenu.classList.remove('hidden');
+      };
 }
 //Asynchronous function handled by webpack 
 Promise.all([
