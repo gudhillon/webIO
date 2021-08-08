@@ -41,7 +41,8 @@ function playerCollisions(players) {
               if (player.radius >= 200) player.radius =  Math.random() * (220 - 200) + 200;
               player.speed -= Constants.PLAYER_RADIUS / player.radius;
               if (player.speed  <= 298) player.speed =  Math.random() * (298 - 278) + 278;
-          }
+              break;
+          } 
       }
   }
 }
