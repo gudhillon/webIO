@@ -105,9 +105,17 @@ function renderPlayer(me, player) {
     );
     context.restore();
 
-    context.fillStyle = 'red';
-    context.font =  radius/(PLAYER_RADIUS/13) +"px Verdana";
+    context.fillStyle = 'lightblue';
+    context.strokeStyle = "black";
+    context.lineWidth = 1;
+    context.font =  "bold " + radius/(PLAYER_RADIUS/13) +"px Verdana";
     context.fillText(
+      username.substring(0, username.indexOf("NaN")),
+      canvasX,
+      canvasY,
+      radius * 2,
+    );
+    context.strokeText(
       username.substring(0, username.indexOf("NaN")),
       canvasX,
       canvasY,
