@@ -27,7 +27,7 @@ Main Tasks:
 Optional Tasks:
 
 1. Create basic skins, allow user to choose (and create default)
-   - Path: indet.html -> index.js -> networking.js -> server.js -> game.js -> player.js -> render.js
+   - Path: index.html -> index.js -> networking.js -> server.js -> game.js -> player.js -> render.js
 2. Use Databases
    - Store leaderboard records
    - Authentication (account register -> select pre-custom skins)
