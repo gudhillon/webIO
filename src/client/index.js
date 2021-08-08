@@ -1,8 +1,8 @@
 // Javascript client entrypoint
 import { connect, play } from './networking';
 import {downloadAssets} from './assets'
-import { startCapturingInput } from './input';
-import { startRendering } from './render';
+import { startCapturingInput, stopCapturingInput } from './input';
+import { startRendering, stopRendering } from './render';
 import { initState } from './state';
 
 // Included with Webpack bundle
@@ -13,9 +13,14 @@ const playMenu = document.getElementById("play-menu");
 const playButton = document.getElementById("play-button");
 const usernameInput = document.getElementById("username-input");
 
+function gameOver() {
+stopCapturingInput();
+stopRendering()
+playMenu.classList.remove('hidden');
+}
 //Asynchronous function handled by webpack 
 Promise.all([
-    connect(),
+    connect(gameOver),
     downloadAssets(),
     ]).then(() => {
         playMenu.classList.remove("hidden");

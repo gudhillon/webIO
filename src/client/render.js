@@ -28,9 +28,19 @@ function render() {
     for (var blob = 0; blob < blobs.length; blob++) {
       renderBlob(me, blobs[blob].x, blobs[blob].y, BLOB_RADIUS, blobs[blob].color);
     }
-    //Draw Players
-    renderPlayer(me, me);
+    //Draw other players
     others.forEach(renderPlayer.bind(null, me));
+    //Draw player
+    renderPlayer(me, me);
+
+    // Render players from least to greatest
+    // others.push(me);
+    // others.sort((a, b) => parseFloat(a.radius) - parseFloat(b.radius));
+    // console.log(others);
+    // others.forEach(function(event) {
+    //   if (event.id == me.id) renderPlayer(me, me);
+    //   else renderPlayer(me, event);
+    // });
 }
 
 function renderBorders(x, y) {
@@ -46,8 +56,8 @@ function renderBorders(x, y) {
 // render background relative to player
 // background pattern
 function renderBackground(x, y) {
-   const backgroundX = MAP_SIZE / 2 - x + canvas.width / 2;
-   const backgroundY = MAP_SIZE / 2 - y + canvas.height / 2;
+  const backgroundX = MAP_SIZE / 2 - x + canvas.width / 2;
+  const backgroundY = MAP_SIZE / 2 - y + canvas.height / 2;
   const backgroundGradient = context.createRadialGradient(
     backgroundX,
     backgroundY,

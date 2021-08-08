@@ -1,6 +1,8 @@
 const Constants = require('../shared/shared');
 const Player = require('./player');
-const blobCollisions = require('./blobCollisions');
+const collisions = require('./collisions');
+const blobCollisions = collisions.blobCollisions;
+const playerCollisions = collisions.playerCollisions;
 
 class Game {
     constructor(blobs) {
@@ -42,7 +44,17 @@ class Game {
         });
         
         this.blobs = blobCollisions(Object.values(this.players), this.blobs);
-        // After this, check same method against each player
+        playerCollisions(Object.values(this.players));
+        
+        // Check if any players are dead
+        Object.keys(this.sockets).forEach(playerID => {
+          const socket = this.sockets[playerID];
+          const player = this.players[playerID];
+          if (player.isDead) {
+            socket.emit(Constants.MSG_TYPES.GAME_OVER);
+            this.removePlayer(socket);
+          }
+        });
 
         // Send a game update to each player every other time
         // This is to save bandwidth, 30 updates a second to game is good enough

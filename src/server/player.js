@@ -6,6 +6,8 @@ class Player extends ObjectClass {
       super(id, x, y, Math.random() * 2 * Math.PI, Constants.PLAYER_SPEED);
       this.username = username;
       this.radius = Constants.PLAYER_RADIUS;
+      this.isDead = false;
+      this.score = 0;
     }
     update(dt) {
       super.update(dt);
