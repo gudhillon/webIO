@@ -19,7 +19,7 @@ Main Tasks:
    - if player bigger than other player and they overlap (> 50% overlap),
      smaller player dies ✓
 8. Send dead players to game over screen -> reconnect screen ✓
-9. Add a leaderboard of top 10 players, current position of player, score display
+9. Add a leaderboard of top 10 players, current position of player, score display ✓
 10. Adjust HTML/CSS of main page ✓
 11. Add different loading screens for initial render and stop render (when reconnect or death) ✓
 12. Add Documentation/Sources
