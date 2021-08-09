@@ -66,10 +66,24 @@ function renderBackground(x, y) {
     backgroundY,
     MAP_SIZE / 2,
   );
-  backgroundGradient.addColorStop(0, '#C9FFE5');
-  backgroundGradient.addColorStop(1, '#7CB9E8');
+  backgroundGradient.addColorStop(0, 'white');
+  backgroundGradient.addColorStop(1, 'white');
   context.fillStyle = backgroundGradient;
   context.fillRect(canvas.width / 2 - x, canvas.height / 2 - y, MAP_SIZE, MAP_SIZE);  
+
+  // Horizontal
+  for (var i = canvas.width / 2 - x; i <= MAP_SIZE - x + canvas.width / 2; i += 40) {
+    context.moveTo(i, canvas.height / 2 - y);
+    context.lineTo(i, MAP_SIZE - y + canvas.height / 2);
+  }
+  // Vertical
+  for (var j = canvas.height / 2 - y; j <= MAP_SIZE - y + canvas.height / 2; j += 40) {
+    context.moveTo(canvas.width / 2 - x, j);
+    context.lineTo(MAP_SIZE - x + canvas.width / 2, j);
+  }
+  context.lineWidth = 0.5;
+  context.strokeStyle = "lightgray";
+  context.stroke();
 }
 
 function renderBlob(me, xPos, yPos, radius, color) {

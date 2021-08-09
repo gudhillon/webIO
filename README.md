@@ -35,5 +35,5 @@ Optional Tasks:
 4. User input, change direction accounting for multiple devices, ex: click, touchmove, etc.
 5. Create disconnect feature on client side (networking)
 6. Fix rendering smallest players to then biggest players on map
-7. Add grids as background instead of gradient
+7. Add grids as background instead of gradient ✓
 8. Remove Radius Cap/Endgame randomness -> Scale screen as player gets bigger, integrate scale to nearby blobs/players
