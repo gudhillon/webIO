@@ -80,3 +80,49 @@ button:focus {
     opacity: 1;
   }
 }
+#leaderboard {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+#leaderboard th {
+  text-align: center;
+  padding: 2px 5px;
+}
+#leaderboard td {
+  text-align: center;
+  padding: 2px 5px;
+}
+#score-display {
+  position: fixed;
+  bottom: 25px;
+  left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: larger;
+  font-weight: bold;
+}
+#rank-display {
+  position: fixed;
+  bottom: 0px;
+  left: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: larger;
+  font-weight: bold;
+}
+#board-header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  font-weight: bold;
+}

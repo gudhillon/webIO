@@ -24,6 +24,7 @@ class Player extends ObjectClass {
         username: this.username,
         speed: this.speed,
         radius: this.radius,
+        score: this.score
       };
     }
 }

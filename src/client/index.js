@@ -4,6 +4,7 @@ import {downloadAssets} from './assets'
 import { startCapturingInput, stopCapturingInput } from './input';
 import { startRendering, stopRendering } from './render';
 import { initState } from './state';
+import { setLeaderboardHidden } from './leaderboard';
 
 // Included with Webpack bundle
 import './css/main.css'
@@ -19,6 +20,7 @@ const userValue = document.getElementById("username-value");
 function gameOver() {
     console.log("Player dead");
     stopCapturingInput();
+    setLeaderboardHidden(true);
     userValue.innerHTML = usernameInput.value + "?";
     deathScreen.classList.remove("hidden");
     restartButton.onclick = () => {
@@ -40,5 +42,6 @@ Promise.all([
             initState();
             startCapturingInput();
             startRendering();
+            setLeaderboardHidden(false);
         };
 });

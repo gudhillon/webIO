@@ -26,13 +26,14 @@ Main Tasks:
 
 Optional Tasks:
 
-1. Create basic skins, allow user to choose (and create default)
+1. Highlight current player on leaderboard
+2. Create basic skins, allow user to choose (and create default)
    - Path: index.html -> index.js -> networking.js -> server.js -> game.js -> player.js -> render.js
-2. Use Databases
+3. Use Databases
    - Store leaderboard records
    - Authentication (account register -> select pre-custom skins)
-3. User input, change direction accounting for multiple devices, ex: click, touchmove, etc.
-4. Create disconnect feature on client side (networking)
-5. Fix rendering smallest players to then biggest players on map
-6. Add grids as background instead of gradient
-7. Remove Radius Cap/Endgame randomness -> Scale screen as player gets bigger, integrate scale to nearby blobs/players
+4. User input, change direction accounting for multiple devices, ex: click, touchmove, etc.
+5. Create disconnect feature on client side (networking)
+6. Fix rendering smallest players to then biggest players on map
+7. Add grids as background instead of gradient
+8. Remove Radius Cap/Endgame randomness -> Scale screen as player gets bigger, integrate scale to nearby blobs/players

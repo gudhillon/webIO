@@ -59,18 +59,26 @@ class Game {
         // Send a game update to each player every other time
         // This is to save bandwidth, 30 updates a second to game is good enough
         if (this.shouldSendUpdate) {
+          const leaderboard = this.getLeaderboard();
           Object.keys(this.sockets).forEach(playerID => {
             const socket = this.sockets[playerID];
             const player = this.players[playerID];
-            socket.emit(Constants.MSG_TYPES.GAME_UPDATE, this.createUpdate(player));
+            socket.emit(Constants.MSG_TYPES.GAME_UPDATE, this.createUpdate(player, leaderboard));
           });
           this.shouldSendUpdate = false;
         } else {
           this.shouldSendUpdate = true;
         }
       }
-    
-      createUpdate(player) {
+      
+      getLeaderboard() {
+        return Object.values(this.players)
+          .sort((p1, p2) => p2.score - p1.score)
+          //.slice(0, 10)
+          .map(p => ({ username: p.username, score: Math.round(p.score), id: p.id }));
+      }
+
+      createUpdate(player, leaderboard) {
         const nearbyPlayers = Object.values(this.players).filter(
           p => p !== player && p.distanceTo(player) <= Constants.MAP_SIZE / 2,
         );
@@ -86,6 +94,7 @@ class Game {
           me: player.serializeForUpdate(),
           others: nearbyPlayers.map(p => p.serializeForUpdate()),
           blobs: nearbyBlobs.map(b => b.serializeForUpdate()),
+          leaderboard,
         };
       }
     }

@@ -3,6 +3,8 @@
 // me: player info for player getting update
 //  me : {x.., y.., direction.., id..}
 // others: array of other players in game
+// Blobs: array of food in map
+import { updateLeaderboard } from './leaderboard';
 
 // Buffer, current client state 100ms behind server,
 // we do this for more consistent gameplay accounting for 
@@ -25,7 +27,7 @@ export function processGameUpdate(update) {
       gameStart = Date.now();
     }
     gameUpdates.push(update);
-  
+    updateLeaderboard(update.leaderboard, update.me);
     // Hold one game update before the current time of server
     const base = getBaseUpdate();
     if (base > 0) {
