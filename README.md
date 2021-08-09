@@ -37,3 +37,7 @@ Optional Tasks:
 6. Fix rendering smallest players to then biggest players on map
 7. Add grids as background instead of gradient ✓
 8. Remove Radius Cap/Endgame randomness -> Scale screen as player gets bigger, integrate scale to nearby blobs/players
+
+# License
+
+Copyright for portions of project webIO are held by [Victor Zhou, 2019] as part of project [example-.io-game](https://github.com/vzhou842/example-.io-game). All other copyright for project webIO are held by [Gurpreet Dhillon, 2021]. See [LICENSE](https://github.com/gudhillon/webIO/blob/main/LICENSE) for more information.
