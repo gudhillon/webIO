@@ -95,16 +95,16 @@ button:focus {
 }
 #leaderboard th {
   text-align: center;
-  padding: 2px 5px;
+  padding: 1px 10px;
 }
 #leaderboard td {
   text-align: center;
-  padding: 2px 5px;
+  padding: 1px 10px;
 }
 #score-display {
   position: fixed;
   bottom: 25px;
-  left: 10px;
+  left: 5px;
   padding: 10px;
   border-radius: 5px;
   font-size: larger;
@@ -113,7 +113,7 @@ button:focus {
 #rank-display {
   position: fixed;
   bottom: 0px;
-  left: 10px;
+  left: 5px;
   padding: 10px;
   border-radius: 5px;
   font-size: larger;
