@@ -40,4 +40,4 @@ Optional Tasks:
 
 # License
 
-Copyright for portions of project webIO are held by [Victor Zhou, 2019] as part of project [example-.io-game](https://github.com/vzhou842/example-.io-game). All other copyright for project webIO are held by [Gurpreet Dhillon, 2021]. See [LICENSE](https://github.com/gudhillon/webIO/blob/main/LICENSE) for more information.
+This Project is distributed under the [MIT License](https://mit-license.org/). Copyright for portions of project webIO are held by [Victor Zhou, 2019] as part of project [example-.io-game](https://github.com/vzhou842/example-.io-game). All other copyright for project webIO are held by [Gurpreet Dhillon, 2021]. See [LICENSE](https://github.com/gudhillon/webIO/blob/main/LICENSE) for more information.
