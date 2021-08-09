@@ -10,14 +10,16 @@ export function updateLeaderboard(data, player) {
     for (let i = 0; i < data.length; i++) {
         if (data[i].id == player.id) temp = i + 1;
     }
-    scoreDisplay.innerHTML = "Score: " + player.score;
-    rankDisplay.innerHTML = "Rank: " + temp + "/" + data.length;
+    scoreDisplay.innerHTML = "Your score: " + player.score;
+    rankDisplay.innerHTML = "Your rank: " + temp + " of " + data.length;
     data = data.slice(0, 10);
     for (let i = 0; i < data.length; i++) {
       rows[i + 1].innerHTML = `<td>#${i + 1}</td><td>${escape(data[i].username) || 'Unknown'}</td><td>${data[i].score}</td>`;
     }
+    // Clear empty or dead players rank out of leaderboard
     for (let i = data.length; i < 10; i++) {
-      rows[i + 1].innerHTML = `<td>#${i + 1}</td><td>-</td><td>-</td>`;
+      //rows[i + 1].innerHTML = `<td>#${i + 1}</td><td>-</td><td>-</td>`;
+      rows[i + 1].innerHTML = `<td></td><td></td><td></td>`;
     }
   }
 
