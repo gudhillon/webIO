@@ -75,7 +75,7 @@ Here are the list of tasks that I created for myself to record my progress.
 - [Agar.io mechanics explained in depth](https://www.reddit.com/r/Agario/comments/34x2fa/game_mechanics_explained_in_depth_numbers_and/)
 - [Understanding how to draw agar.io grid map](https://stackoverflow.com/questions/4172246/grid-drawn-using-a-canvas-element-looking-stretched)
 - [Using Lodash escape to display usernames](https://www.geeksforgeeks.org/lodash-_-escape-method/)
-- [Understanding function.prototype with null as argument](https://stackoverflow.com/questions/27654149/function-prototype-bind-with-null-as-argument)
+- [Understanding function.prototype.bind with null as argument](https://stackoverflow.com/questions/27654149/function-prototype-bind-with-null-as-argument)
 - [Playing Agar.io to gain a further understanding of how game works](https://agar.io/)
 
 ## License
