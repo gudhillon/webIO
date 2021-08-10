@@ -1,23 +1,23 @@
-## webIO - Simple Agar.io Clone
+# webIO - Simple Agar.io Clone
 
 Welcome! The objective of this project is to replicate the popular io game, [Agar.io](https://en.wikipedia.org/wiki/Agar.io) as best as possible. The project is using express to power the web server, html5 canvas to render the game, and socket.io to establish communication between the browser and server.
 
 I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and [Victor Zhou's](https://victorzhou.com/) io programming tutorials to go above and beyond by trying to replicate Agar.io. I was able to learn the fundamentals of web development in terms of multiplayer games through this process.
 
-# Installation
+## Installation
 
 First, setup [Node](https://nodejs.org/en/download/) and [NPM](https://docs.npmjs.com/getting-started). Afterwards, follow the process below.
 % git clone https://github.com/gudhillon/webIO.git
 % cd webIO
 % npm install
 
-# Usage
+## Usage
 
 % npm run develop
 
 Then visit [localhost:3000](http://localhost:3000/).
 
-# Agar.io clone tasks
+## Agar.io clone tasks
 
 Here are the list of tasks that I created for myself to record my progress.
 
@@ -59,7 +59,7 @@ Here are the list of tasks that I created for myself to record my progress.
   - [ ] Remove Radius Cap/Endgame randomness -> Scale screen as player gets bigger, integrate scale to nearby blobs/players
   - [ ] Do not show portion of player that is out of bounds
 
-# Sources
+## Sources
 
 - [Basic Game Mechanics](https://www.youtube.com/watch?v=JXuxYMGe4KI&ab_channel=TheCodingTrain)
 - [Basics of using socket.io and node.js](https://www.youtube.com/watch?v=ZjVyKXp9hec&ab_channel=TheCodingTrain)
@@ -71,6 +71,6 @@ Here are the list of tasks that I created for myself to record my progress.
 - [Understanding function.prototype with null as argument](https://stackoverflow.com/questions/27654149/function-prototype-bind-with-null-as-argument)
 - [Playing Agar.io to further understanding of how game works](https://agar.io/)
 
-# License
+## License
 
 This Project is distributed under the [MIT License](https://mit-license.org/). Copyright for portions of project webIO are held by [Victor Zhou, 2019] as part of project [example-.io-game](https://github.com/vzhou842/example-.io-game). All other copyright for project webIO are held by [Gurpreet Dhillon, 2021]. See [LICENSE](https://github.com/gudhillon/webIO/blob/main/LICENSE) for more information.
