@@ -30,6 +30,13 @@ First, setup [Node](https://nodejs.org/en/download/) and [NPM](https://docs.npmj
 
 Then visit [localhost:3000](http://localhost:3000/).
 
+In terms of a production setting, we can do the following.
+
+```
+% npm run build
+% npm start
+```
+
 ## Agar.io clone tasks
 
 Here are the list of tasks that I created for myself to record my progress.
