@@ -7,13 +7,18 @@ I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjg
 ## Installation
 
 First, setup [Node](https://nodejs.org/en/download/) and [NPM](https://docs.npmjs.com/getting-started). Afterwards, follow the process below.
+
+```
 % git clone https://github.com/gudhillon/webIO.git
 % cd webIO
 % npm install
+```
 
 ## Usage
 
+```
 % npm run develop
+```
 
 Then visit [localhost:3000](http://localhost:3000/).
 
