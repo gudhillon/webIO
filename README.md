@@ -1,11 +1,33 @@
+## webIO - Simple Agar.io Clone
+
+Welcome! The objective of this project is to replicate the popular io game, [Agar.io](https://en.wikipedia.org/wiki/Agar.io) as best as possible. The project is using express to power the web server, html5 canvas to render the game, and socket.io to establish communication between the browser and server.
+
+I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and [Victor Zhou's](https://victorzhou.com/) io programming tutorials to go above and beyond by trying to replicate Agar.io. I was able to learn the fundamentals of web development in terms of multiplayer games through this process.
+
+# Installation
+
+First, setup [Node](https://nodejs.org/en/download/) and [NPM](https://docs.npmjs.com/getting-started). Afterwards, follow the process below.
+% git clone https://github.com/gudhillon/webIO.git
+% cd webIO
+% npm install
+
+# Usage
+
+% npm run develop
+
+Then visit [localhost:3000](http://localhost:3000/).
+
 # Agar.io clone tasks
+
+Here are the list of tasks that I created for myself to record my progress.
 
 - [x] Foundational IO Tasks:
 
   - [x] get basic http server setup to server simple html page
   - [x] add sockets and check that broadcast/emitting works
+  - [x] canvas rendering views relative to position
 
-- [ ] Main Tasks:
+- [x] Main Tasks:
 
   - [x] change design of background
   - [x] Add randomized food (collectible points) throughout map
@@ -20,7 +42,7 @@
   - [x] Add a leaderboard of top 10 players, current position of player, score display
   - [x] Adjust HTML/CSS of main page
   - [x] Add different loading screens for initial render and stop render (when reconnect or death)
-  - [ ] Add Documentation/Sources
+  - [x] Add Documentation/Sources
 
 - [ ] Optional Tasks:
 
@@ -36,6 +58,18 @@
   - [x] Add grids as background instead of gradient
   - [ ] Remove Radius Cap/Endgame randomness -> Scale screen as player gets bigger, integrate scale to nearby blobs/players
   - [ ] Do not show portion of player that is out of bounds
+
+# Sources
+
+- [Basic Game Mechanics](https://www.youtube.com/watch?v=JXuxYMGe4KI&ab_channel=TheCodingTrain)
+- [Basics of using socket.io and node.js](https://www.youtube.com/watch?v=ZjVyKXp9hec&ab_channel=TheCodingTrain)
+- [Creating io foundation pt1: client side programming](https://victorzhou.com/blog/build-an-io-game-part-1/)
+- [Creating io foundation pt2: server side programming](https://victorzhou.com/blog/build-an-io-game-part-2/)
+- [Agar.io mechanics explained in depth](https://www.reddit.com/r/Agario/comments/34x2fa/game_mechanics_explained_in_depth_numbers_and/)
+- [Understanding how to draw agar.io grid map](https://stackoverflow.com/questions/4172246/grid-drawn-using-a-canvas-element-looking-stretched)
+- [Lodash escape](https://www.geeksforgeeks.org/lodash-_-escape-method/)
+- [Understanding function.prototype with null as argument](https://stackoverflow.com/questions/27654149/function-prototype-bind-with-null-as-argument)
+- [Playing Agar.io to further understanding of how game works](https://agar.io/)
 
 # License
 
