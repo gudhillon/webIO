@@ -26,10 +26,10 @@
 
   - [ ] Highlight current player on leaderboard
   - [ ] Create basic skins, allow user to choose (and create default)
-  - Path: index.html -> index.js -> networking.js -> server.js -> game.js -> player.js -> render.js
+    - Path: index.html -> index.js -> networking.js -> server.js -> game.js -> player.js -> render.js
   - [ ] Use Databases
-  - Store leaderboard records
-  - Authentication (account register -> select pre-custom skins)
+    - Store leaderboard records
+    - Authentication (account register -> select pre-custom skins)
   - [ ] User input, change direction accounting for multiple devices, ex: click, touchmove, etc.
   - [ ] Create disconnect feature on client side (networking)
   - [ ] Fix rendering smallest players to then biggest players on map
