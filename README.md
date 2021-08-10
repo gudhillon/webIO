@@ -6,6 +6,12 @@ Welcome! The objective of this project is to replicate the popular io game, [Aga
 
 I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and [Victor Zhou's](https://victorzhou.com/) io programming tutorials to go above and beyond by trying to replicate Agar.io. I learned the fundamentals of web development in terms of multiplayer games through this process.
 
+## Description
+
+The objective of this game is to consume as many blobs and players on the map to increase your score and size. I made a bit of a twist to this agar.io clone where once you reach a certain radius/speed, you are capped between that radius/speed and some arbitruary limit above that radius/speed. Furthermore, everytime you consume a blob or player at that point, your speed and radius is slightly altered. You can still increase your score normally and try to reach the top, but that comes with a risk that in order to increase your score, you must also be willing to alter your speed and size. This will create an interesting endgame dynamic between the players.
+
+I created the map and display with a mix of UI styles from agar.io and slither.io (another popular io game). We have a grid layout very similar to Agar.io, though the borders are easily visible (red color), much like the borders in slither.io. In terms of the rank/leaderboard display, its also very similar to slither.io, since I believe its better to display the score of each user on the leaderboard as compared to agar.io.
+
 ## Installation
 
 First, setup [Node](https://nodejs.org/en/download/) and [NPM](https://docs.npmjs.com/getting-started). Afterwards, follow the process below.
