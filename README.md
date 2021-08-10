@@ -2,7 +2,7 @@
 
 Welcome! The objective of this project is to replicate the popular io game, [Agar.io](https://en.wikipedia.org/wiki/Agar.io) as best as possible. The project is using express to power the web server, html5 canvas to render the game, and socket.io to establish communication between the browser and server.
 
-I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and [Victor Zhou's](https://victorzhou.com/) io programming tutorials to go above and beyond by trying to replicate Agar.io. I was able to learn the fundamentals of web development in terms of multiplayer games through this process.
+I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and [Victor Zhou's](https://victorzhou.com/) io programming tutorials to go above and beyond by trying to replicate Agar.io. I learned the fundamentals of web development in terms of multiplayer games through this process.
 
 ## Installation
 
@@ -61,10 +61,10 @@ Here are the list of tasks that I created for myself to record my progress.
 
 ## Sources
 
-- [Basic Game Mechanics](https://www.youtube.com/watch?v=JXuxYMGe4KI&ab_channel=TheCodingTrain)
-- [Basics of using socket.io and node.js](https://www.youtube.com/watch?v=ZjVyKXp9hec&ab_channel=TheCodingTrain)
-- [Creating io foundation pt1: client side programming](https://victorzhou.com/blog/build-an-io-game-part-1/)
-- [Creating io foundation pt2: server side programming](https://victorzhou.com/blog/build-an-io-game-part-2/)
+- [The Coding Train - Basic Game Mechanics](https://www.youtube.com/watch?v=JXuxYMGe4KI&ab_channel=TheCodingTrain)
+- [The Coding Train - Basics of using socket.io and node.js](https://www.youtube.com/watch?v=ZjVyKXp9hec&ab_channel=TheCodingTrain)
+- [Victor Zhou - Creating io foundation pt1, client side programming](https://victorzhou.com/blog/build-an-io-game-part-1/)
+- [Victor Zhou - Creating io foundation pt2, server side programming](https://victorzhou.com/blog/build-an-io-game-part-2/)
 - [Agar.io mechanics explained in depth](https://www.reddit.com/r/Agario/comments/34x2fa/game_mechanics_explained_in_depth_numbers_and/)
 - [Understanding how to draw agar.io grid map](https://stackoverflow.com/questions/4172246/grid-drawn-using-a-canvas-element-looking-stretched)
 - [Lodash escape](https://www.geeksforgeeks.org/lodash-_-escape-method/)
