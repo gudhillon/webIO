@@ -35,6 +35,7 @@
   - [ ] Fix rendering smallest players to then biggest players on map
   - [x] Add grids as background instead of gradient
   - [ ] Remove Radius Cap/Endgame randomness -> Scale screen as player gets bigger, integrate scale to nearby blobs/players
+  - [ ] Do not portion of player that is out of bounds
 
 # License
 
