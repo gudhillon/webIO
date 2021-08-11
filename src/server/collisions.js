@@ -14,8 +14,8 @@ function blobCollisions(players, blobs) {
                 if (player.radius >= 200) player.radius =  Math.random() * (220 - 200) + 200;
                 player.speed -= Constants.PLAYER_RADIUS / player.radius;
                 if (player.speed  <= 298) player.speed =  Math.random() * (298 - 278) + 278;
-                blob.x = Math.random() * (Constants.MAP_SIZE-30);
-                blob.y = Math.random() * (Constants.MAP_SIZE-30);
+                blob.x = Math.random() * (Constants.MAP_SIZE);
+                blob.y = Math.random() * (Constants.MAP_SIZE);
 
                 player.score += Constants.SCORE_PER_BLOB;
                 break;
