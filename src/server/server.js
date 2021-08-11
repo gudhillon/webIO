@@ -31,7 +31,7 @@ var colors =       [ "aqua",  "black", "blue",  "fuchsia",
                      "navy",  "olive", "purple","red",
                      "silver","teal",  "yellow","azure",
                      "gold",  "bisque","pink",  "orange" ];
-for (var i = 0; i < Constants.MAP_SIZE / 4; i++) { 
+for (var i = 0; i < Constants.MAP_SIZE / 10; i++) { 
   // Math.random() * (max - min) + min
   var x = Math.random() * (Constants.MAP_SIZE);
   var y = Math.random() * (Constants.MAP_SIZE);
