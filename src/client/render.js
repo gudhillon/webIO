@@ -56,21 +56,7 @@ function renderBorders(x, y) {
 // render background relative to player
 // background pattern
 function renderBackground(x, y) {
-  const backgroundX = MAP_SIZE / 2 - x + canvas.width / 2;
-  const backgroundY = MAP_SIZE / 2 - y + canvas.height / 2;
-  const backgroundGradient = context.createRadialGradient(
-    backgroundX,
-    backgroundY,
-    MAP_SIZE / 10,
-    backgroundX,
-    backgroundY,
-    MAP_SIZE / 2,
-  );
-  backgroundGradient.addColorStop(0, 'white');
-  backgroundGradient.addColorStop(1, 'white');
-  context.fillStyle = backgroundGradient;
-  context.fillRect(canvas.width / 2 - x, canvas.height / 2 - y, MAP_SIZE, MAP_SIZE);  
-
+  context.clearRect(canvas.width / 2 - x, canvas.height / 2 - y, MAP_SIZE, MAP_SIZE);  
   // Horizontal
   for (var i = canvas.width / 2 - x; i <= MAP_SIZE - x + canvas.width / 2; i += 40) {
     context.moveTo(i, canvas.height / 2 - y);
