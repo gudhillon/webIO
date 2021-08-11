@@ -90,6 +90,7 @@ Here are the list of tasks that I created for myself to record my progress.
 - [Using Lodash escape to display usernames](https://www.geeksforgeeks.org/lodash-_-escape-method/)
 - [Understanding function.prototype.bind with null as argument](https://stackoverflow.com/questions/27654149/function-prototype-bind-with-null-as-argument)
 - [Playing Agar.io to gain a further understanding of how game works](https://agar.io/)
+- [Background of initial screen](https://backgroundcheckall.com/agario-background-6-2/)
 
 ## License
 
