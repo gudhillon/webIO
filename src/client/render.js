@@ -90,12 +90,11 @@ function renderBlob(me, xPos, yPos, radius, color) {
 // Render Player
 // Scale factor Default size / Actual size
 function renderPlayer(me, player) {
-    const { x, y, direction, username, radius } = player;
+    const { x, y, username, radius } = player;
     const canvasX = canvas.width / 2 + x - me.x;
     const canvasY = canvas.height / 2 + y - me.y;
     context.save();
     context.translate(canvasX, canvasY);
-    context.rotate(direction);
     context.drawImage(
       getAsset('player.png'),
       -radius,
