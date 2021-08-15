@@ -1,2 +1,14 @@
 runtime: nodejs14
-entrypoint: npm start
+
+handlers:
+- url: /favicon\.ico
+  static_files: public/assets/favicon.ico
+  upload: public/assets/favicon\.ico
+
+- url: /static
+  static_dir: public
+
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
