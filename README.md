@@ -7,7 +7,7 @@ Welcome! The objective of this project is to replicate the popular io game, [Aga
 I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and [Victor Zhou's](https://victorzhou.com/) io programming tutorials to go above and beyond by trying to replicate Agar.io. I learned the fundamentals of web development in terms of multiplayer games through this process.
 
 <h4 align="center">
-  <a href="https://agent-name-d156c.uc.r.appspot.com" target="_blank">Play Agar.io Clone Here</a>
+  <a href="https://agent-name-d156c.uc.r.appspot.com">Play Agar.io Clone Here</a>
 </h4>
 
 NOTE: gcloud application is currently running slowly, so I would recommend the local setup below in order to best demo the game.
