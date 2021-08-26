@@ -4,6 +4,8 @@
 
 https://user-images.githubusercontent.com/66855895/131027176-fcea7b8a-dfd1-425f-af75-0a34319bc3a6.mov
 
+https://user-images.githubusercontent.com/66855895/131029036-bf9fc7d6-fe39-4e2c-8631-acf06c096939.mov
+
 Welcome! The objective of this project is to replicate the popular io game, [Agar.io](https://en.wikipedia.org/wiki/Agar.io) as best as possible. The project is using express to power the web server, html5 canvas to render the game, and socket.io to establish communication between the browser and server.
 
 I was inspired from the [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) and [Victor Zhou's](https://victorzhou.com/) io programming tutorials to go above and beyond by trying to replicate Agar.io. I learned the fundamentals of web development in terms of multiplayer games through this process.
